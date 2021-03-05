@@ -1,0 +1,59 @@
+.tcontent table {
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+  }
+  .tcontent table tr th {
+    background-color: #050441;  
+    color: #f1da8d;  
+    /* border-bottom: solid 3px #050441; */
+    padding: 5px 10px;
+  }
+
+  .tcontent table tr th:nth-child(2), .tcontent table tr th:nth-child(3)  {
+    text-align: left;
+  }
+
+  .tcontent table tr td {
+    padding: 5px 10px;
+  }
+/*   .tcontent table tr:last-child td {
+    border-bottom: solid 1px #777777; 
+  }
+*/
+  .tcontent table tr td:nth-child(6), .tcontent table tr td:nth-child(7), .tcontent table tr td:nth-child(9) {
+    text-align: right;
+  }
+
+
+  .tcontent table tr:hover {
+    background-color:#f1da8d;
+  }
+
+
+  .tcontent table tr.highlight {
+    background-color:aquamarine !important; 
+
+  }
+
+/* ------*/
+.myrow {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.mycolumn {
+  flex: 40%; 
+  justify-content: right;
+  padding: 10px;
+
+}
+.mycolumn2 {
+  flex: 2%; 
+  justify-content: right;
+  padding: 10px;
+
+}
+
+
+  

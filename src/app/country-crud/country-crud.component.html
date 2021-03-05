@@ -1,0 +1,94 @@
+<!-- <p>country-crud works!</p> -->
+
+<form >
+    <h3 >Country's Data {{nc_country.name}}</h3>
+  
+    <div class="field">
+      <label for="cid">ID:</label>
+      <input name="cid" type = "number" id="cid" value = {{nc_country.id}} #newcid>  
+    </div>
+
+    <div class="field">
+        <label for="cname">Name:</label>
+        <input name="cname" id="cname"  value = {{nc_country.name}} #newcname>  
+    </div>
+
+    <div class="field">
+        <label for="ccapital">Capital:</label>
+        <input name="ccapital" id="ccapital"  value = {{nc_country.capital}}  #newccapital> 
+    </div>
+
+    <div class="field">
+        <label for="cregion">Region:</label>
+        <input name="cregion" id="cregion"  value = {{nc_country.region}} #newcregion>  
+    </div>
+
+    <div class="field">
+        <label for="csubregion">Subregion:</label>
+        <input name="csubregion" id="csubregion"  value = {{nc_country.subregion}} #newcsubregion>  
+    </div>
+
+
+    <div class="field">
+        <label for="cpopulation">Population:</label>
+        <input name="cpopulation" type = "number" id="cpopulation"  value = {{nc_country.population}} #newcpopulation>  
+    </div>
+
+    <div class="field">
+        <label for="carea">Area:</label>
+        <input name="carea" type = "number" id="carea"  value = {{nc_country.area}} #newcarea>  
+    </div>
+
+    <div class="field">
+        <label for="calpha2code">Abr2:</label>
+        <input name="calpha2code" id="calpha2code"  value = {{nc_country.alpha2code}} #newcalpha2code>  
+    </div>
+
+    <div class="field">
+        <label for="calpha3code">Abr3:</label>
+        <input name="calpha3code" id="calpha3code"  value = {{nc_country.alpha3code}} #newcalpha3code>  
+    </div>
+
+    <div class="field">
+        <label for="cgdp">GDP:</label>
+        <input name="cgdp" type = "number" id="cgdp"  value = {{nc_country.gdp}} #newcgdp> 
+    </div>
+
+    
+    <button (click)="addRecord(
+                    newcid, 
+                    newcname, 
+                    newccapital,
+                    newcregion,
+                    newcsubregion,
+                    newcpopulation,
+                    newcarea,
+                    newcalpha2code,
+                    newcalpha3code,
+                    newcgdp
+                    )">
+      Add
+    </button>
+  
+    <button (click)="updRecord(
+                    newcid, 
+                    newcname, 
+                    newccapital,
+                    newcregion,
+                    newcsubregion,
+                    newcpopulation,
+                    newcarea,
+                    newcalpha2code,
+                    newcalpha3code,
+                    newcgdp
+                    )">
+      Update
+    </button>
+    
+    <button (click)="delRecord(newcid)">
+      Delete
+    </button>
+    
+    <input type="reset" value="Clear">
+
+  </form>

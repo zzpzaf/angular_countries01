@@ -1,0 +1,75 @@
+<!-- <p>countries-table works!</p> -->
+
+<h2>Countries :  </h2>
+<!-- <p *ngFor="let country of my_countries"> {{country.name}}</p> -->
+
+
+<div class="tcontent">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Country</th>
+          <th>Capital</th>
+          <th>Region</th>
+          <th>SubRegion</th>
+          <th>Population</th>
+          <th>Total Aerea</th>
+          <th>Country Codes</th>
+          <th>GDP</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mcountry of my_countries" (click)="selectedCountry(mcountry)"
+        [ngClass] = "{'highlight' : mcountry.name == my_country.name}"
+        >
+
+          <td>{{mcountry.id}}</td>
+          <td>{{mcountry.name}}</td>
+          <td>{{mcountry.capital}}</td>
+          <td>{{mcountry.region}}</td>
+          <td>{{mcountry.subregion}}</td>
+          <td>{{mcountry.population | number }}</td>
+          <td>{{mcountry.area | number }} km<sup>2</sup></td>
+          <td>{{mcountry.alpha2code}} / {{mcountry.alpha3code}}</td>
+          <td>{{mcountry.gdp | currency: 'USD' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<hr>
+
+<!-- 
+  <div class = 'myrow'>
+  <div class = 'mycolumn'>
+     I prefer: {{my_country.name}}
+  </div>
+  <div class = 'mycolumn2'>
+    <button (click)="addCountry()">Add Country</button>
+    <button (click)="delCountry()">Del Country</button>
+  </div>
+</div> 
+-->
+
+<!-- Here, the child component 'CountryCrudComponent' starts-->
+<div>
+  <app-country-crud
+    [nc_country] = "my_country"
+    (emitAddCountry) = "onAddCountry($event)"
+    (emitUpdCountry) = "onUpdCountry($event)"
+    (emitDelCountry) = "onDelCountry($event)"
+    >
+  </app-country-crud>  
+
+</div>
+<hr>
+
+
+
+
+
+
+
