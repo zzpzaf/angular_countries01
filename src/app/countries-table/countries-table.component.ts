@@ -38,21 +38,6 @@ my_countries: Country[] = [];
 
   onAddCountry(extra_country: Country): void {
 
-    /*
-    let extra_country: Country = new Country();
-    
-    extra_country.id = 99;
-    extra_country.name = 'Bahaviola'; 
-    extra_country.capital = '' ;
-    extra_country.region = '';
-    extra_country.subregion = '';
-    extra_country.population = 1000000;
-    extra_country.area = 100000;
-    extra_country.alpha2code = 'XX';
-    extra_country.alpha3code = 'XXX';
-    extra_country.gdp = 1000; 
-    */
-
    console.log("Add");
    console.log(extra_country);
 
@@ -64,8 +49,6 @@ my_countries: Country[] = [];
   }
   
  
-  //sudo kill -9 $(sudo lsof -t -i:4200)
-
   onUpdCountry(upd_country: Country): void {
 
     console.log("Upd");
@@ -96,11 +79,6 @@ my_countries: Country[] = [];
 
   onDelCountry(n: number): void {
 
-    //const sel_country: Country = this.my_country;
-    //const i: number = this.my_countries.indexOf(sel_country);
-    
-    
-    
     const i = this.my_countries.findIndex(the_country => the_country.id == n)
 
     if (i != -1) {
