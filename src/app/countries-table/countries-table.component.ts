@@ -47,6 +47,8 @@ my_countries: Country[] = [];
       this.my_countries.push(extra_country); 
     }  
 
+    this.my_country = this.my_countries[this.my_countries.length-1];
+
   }
   
  
