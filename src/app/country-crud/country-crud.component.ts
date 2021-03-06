@@ -1,5 +1,7 @@
+
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Country } from '../dataclasses/country';
+
 
 @Component({
   selector: 'app-country-crud',
@@ -15,6 +17,7 @@ export class CountryCrudComponent implements OnInit {
   @Output() emitAddCountry: EventEmitter<Country> =   new EventEmitter<Country>();
   @Output() emitUpdCountry: EventEmitter<Country> =   new EventEmitter<Country>();
   @Output() emitDelCountry: EventEmitter<number> =   new EventEmitter<number>();
+  
   
   
   constructor() { }
@@ -108,5 +111,6 @@ export class CountryCrudComponent implements OnInit {
     //return n;
     return false;
   }
+
 
 }

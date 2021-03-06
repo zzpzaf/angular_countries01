@@ -85,6 +85,8 @@ my_countries: Country[] = [];
     if (i != -1) {
       console.log(i);
       this.my_countries.splice(i, 1); 
+      //After the deletion, make again the 0-index country - the current country
+      this.my_country = this.my_countries[0];
     }
 
   }
