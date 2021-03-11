@@ -11,12 +11,12 @@ const URLendpoint = 'https://www.phpapi1.com/db/testcCuntriesAPI1.php';
 })
 export class Restphpapi1Service {
 
-  constructor(private http: HttpClient) {
+  constructor(private httpserv: HttpClient) {
    }
 
    getCountries() {
 
-    return this.http.get(URLendpoint);
+    return this.httpserv.get(URLendpoint);
 
   }
 

@@ -11,13 +11,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CountriesTableComponent } from './countries-table/countries-table.component';
 import { CountryServices } from './dataclasses/countries-services';
 import { CountryCrudComponent } from './country-crud/country-crud.component';
+import { Remoteapicountries1Component } from './remoteapicountries1/remoteapicountries1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppInfoComponent,
     CountriesTableComponent,
-    CountryCrudComponent
+    CountryCrudComponent,
+    Remoteapicountries1Component
   ],
   imports: [
     BrowserModule,
