@@ -1,13 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Country } from '../dataclasses/country';
 import { Restphpapi1Service } from '../restphpapi1.service';
-<<<<<<< HEAD
-//import { HttpClient, HttpResponse } from '@angular/common/http';
-//import { Observable } from 'rxjs';
-=======
+
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
->>>>>>> 575125da4dcf6bbdd488af33d09e21d92d33165b
+
 
 @Component({
   selector: 'app-remoteapicountries1',

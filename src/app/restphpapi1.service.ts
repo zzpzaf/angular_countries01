@@ -1,16 +1,8 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-//import { catchError } from 'rxjs/internal/operators';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-//import { HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-//import { map } from 'rxjs/operators';
-=======
 import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpResponse, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
->>>>>>> 575125da4dcf6bbdd488af33d09e21d92d33165b
+import { map } from 'rxjs/operators'
 import { Country } from './dataclasses/country';
 
 

@@ -13,6 +13,10 @@ import { CountryServices } from './dataclasses/countries-services';
 import { CountryCrudComponent } from './country-crud/country-crud.component';
 import { Remoteapicountries1Component } from './remoteapicountries1/remoteapicountries1.component';
 
+
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,8 @@ import { Remoteapicountries1Component } from './remoteapicountries1/remoteapicou
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [DatePipe, CountryServices],
