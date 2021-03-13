@@ -15,6 +15,7 @@ import { Remoteapicountries1Component } from './remoteapicountries1/remoteapicou
 
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Login1Component } from './login1/login1.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppInfoComponent,
     CountriesTableComponent,
     CountryCrudComponent,
-    Remoteapicountries1Component
+    Remoteapicountries1Component,
+    Login1Component
   ],
   imports: [
     BrowserModule,
