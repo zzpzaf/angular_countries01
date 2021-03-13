@@ -1,5 +1,7 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CountriesTableComponent } from '../countries-table/countries-table.component';
+import { Country } from '../dataclasses/country';
 
 
 @Component({
@@ -9,8 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppInfoComponent implements OnInit {
 
+  @ViewChild(CountriesTableComponent, { static: true })
+  ct_child!: CountriesTableComponent;
   
-
+  ARcountry: Country = new Country();
+  ARcountries: Country[] = [];
 
   title: string = 'This is a Countries information Application';
   info: string = '';
@@ -42,5 +47,33 @@ export class AppInfoComponent implements OnInit {
   }
 
 
+  UpdRemoteCountries(rcountries: Country[]) {
+
+    //console.log(rcountries);
+    //console.log("xxxxxxxxxxxx");
+
+    //this.ARcountries = [];
+    this.ARcountries = rcountries;
+    //console.log(this.ARcountries);
+
+    this.ct_child.remoteCountriesUpdated(this.ARcountries);
+
+  }
+
+
+  getLocal(b:boolean) {
+    this.ct_child.getLocalCountries();
+  }
+
+
+
+
+
+
+
+
+
+
 
 }
+
