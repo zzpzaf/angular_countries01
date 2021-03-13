@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../dataclasses/country';
 import {CountryServices } from '../dataclasses/countries-services';
 
@@ -12,13 +12,15 @@ import {CountryServices } from '../dataclasses/countries-services';
 })
 export class CountriesTableComponent implements OnInit {
 
-my_country!: Country;
-my_countries: Country[] = [];
-//hover: boolean = false;
+  @Input() REMcountries: Country[] = [];  
 
-//ncountry: Country = new Country;
-//ucountry: Country = new Country;
-//did: number = 0;
+  my_country!: Country;
+  my_countries: Country[] = [];
+  //hover: boolean = false;
+
+  //ncountry: Country = new Country;
+  //ucountry: Country = new Country;
+  //did: number = 0;
 
 
   constructor(private myCountriesServices: CountryServices) { 
@@ -27,8 +29,9 @@ my_countries: Country[] = [];
 
   ngOnInit(): void {
   
-    this.my_countries = this.myCountriesServices.getCountries();
-    this.my_country = this.my_countries[0];
+    //this.my_countries = this.myCountriesServices.getCountries();
+    //this.my_country = this.my_countries[0];
+    this.getLocalCountries();
 
   }
 
@@ -93,4 +96,31 @@ my_countries: Country[] = [];
 
   }
 
+
+
+  remoteCountriesUpdated(remcountries: Country[]) {
+
+    //console.log(this.my_countries);
+    //console.log("bbbbbbbbbbbbbbbbbb");
+    //console.log(remcountries);
+
+    //this.my_countries = [];
+    this.my_countries = remcountries;
+    this.my_country = this.my_countries[0];
+
+    //console.log("aaaaaaaaaaaaaaaaaaaa");
+    //console.log(this.my_countries);
+
+  }
+
+
+  getLocalCountries(): void {
+
+    this.my_countries = this.myCountriesServices.getCountries();
+    this.my_country = this.my_countries[0];
+
+  }
+
 }
+
+

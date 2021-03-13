@@ -54,7 +54,31 @@
 </div> 
 -->
 
-<!-- Here, the child component 'CountryCrudComponent' starts-->
+<!-- 
+  We are inside the countries-table.component.html template, 
+  of the 'CountriesTableComponent'. This is the parent component.
+  Here, using the <app-country-crud> selector/tag, the child 
+  component 'CountryCrudComponent' starts .
+  ---------------------------------------------------------------
+  my_country -        This is property of the current (parent) 'CountriesTableComponent'. 
+                      We can use properties of the current (parent) template putting 
+                      them inside tqutes, e.g. "my_country", "my_countries", etc.
+  nc_country -        This is property of the child component - (@Input decorated.)
+                      We use child properties inside square brackets and we can pass 
+                      them, values of the current - parent properties.  
+
+  onAddCountry -      Method of current/parent component 'CountriesTableComponent'.
+  onUpdCountry -      Method of current/parent component 'CountriesTableComponent'.
+  onDelCountry -      Method of current/parent component 'CountriesTableComponent'.
+
+  (emitAddCountry) -  Method of child component 'CountryCrudComponent' (@Output decorated).
+  (emitUpdCountry) -  Method of child component 'CountryCrudComponent' (@Output decorated).
+  (emitDelCountry) -  Method of child component 'CountryCrudComponent' (@Output decorated).
+
+  ($event) -          This is what-ever data passed via calling the .emit(...) function
+                      from an @Output EventEmitter<> property in the child component
+                      'CountryCrudComponent'.
+-->
 <div>
   <app-country-crud
     [nc_country] = "my_country"

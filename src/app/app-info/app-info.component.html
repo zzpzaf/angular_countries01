@@ -1,10 +1,60 @@
 <h1>{{title}}</h1>
 <p>{{info}}</p>
+
+ <p>
+    <!-- This is: {{ARcountries[0].capital}} -->
+</p>
+
 <hr>
 
-<app-remoteapicountries1> </app-remoteapicountries1>
 
-<app-countries-table></app-countries-table>
+<!-- 
+  -----------------------------------------------------------------------  
+  We are inside the app-info.component.html template, 
+  of the BOOTSTRAP 'AppInfoComponent'. This is also a parent component.
+  ----------------------------------------------------------------------- 
+-->
+
+
+<!--
+
+  UpdRemoteCountries() - Method of current/parent component 'app-info.component'/'AppInfoComponent'.
+  (emitRcountries) -     Method of child component 'app-remoteapicountries1'/'Remoteapicountries1Component' (@Output decorated).
+                         The emission takes place into the button-click - event capture method: getRemoteData()
+                         which fetches data (via an observable) from a remote REST API (HttpClient service).
+
+
+  ($event) -          This is what-ever data passed via calling the .emit(...) function
+                      from an @Output EventEmitter<> property in the child component
+                      'Remoteapicountries1Component'.
+-->
+<app-remoteapicountries1
+    (emitRcountries) = "UpdRemoteCountries($event)"  
+    (emitLocalCountriess) = "getLocal($event)" 
+    >
+</app-remoteapicountries1>
+
+  <!--
+  Here, using the <app-countries-table> selector/tag, ANOTHER child 
+  component, the 'CountriesTableComponent' starts .
+  ---------------------------------------------------------------
+  ARcountries -       This is property of the current (parent) 'AppInfoComponent'. 
+                      We can use properties of the current (parent) template putting 
+                      them inside tqutes, e.g. "ARcountries", "my_countries", etc.
+  REMcountries -      This is property of the child component ( @Input() decorated ).
+                      We use child properties inside square brackets and we can pass 
+                      them, values of the current - parent properties.  
+  -->  
+
+<!-- <app-countries-table
+    [REMcountries] = "ARcountries"
+    > 
+</app-countries-table> -->
+
+<app-countries-table> 
+</app-countries-table>
+
+
 <hr>
 
 
