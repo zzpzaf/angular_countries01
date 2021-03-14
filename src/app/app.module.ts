@@ -35,7 +35,7 @@ import { Login1Component } from './login1/login1.component';
     AppRoutingModule
   ],
   providers: [DatePipe, CountryServices],
-  bootstrap: [AppInfoComponent]
+  bootstrap: [AppComponent]
 })
 
 
