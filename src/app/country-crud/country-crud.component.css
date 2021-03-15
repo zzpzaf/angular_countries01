@@ -44,7 +44,7 @@
   }
   .buttons-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
     background-color: rgb(243, 210, 103);
     padding-left: 2rem;
@@ -54,7 +54,7 @@
   } 
   .navitem {
      padding: .5em;
-     display: inline-block;
+     /* display: inline-block; */
      width: 150px; 
      height: 30px; 
      text-align: center;
@@ -64,4 +64,21 @@
      color: #f1da8d;
      cursor: pointer;
      font-weight: bold;
+     margin-right: 10px;
   }
+
+
+  #part1{
+    flex:80%;
+    display: flex;
+    float:left;
+    justify-items:left;
+    
+  }
+
+  #part2{
+    flex:2%;
+    float:right;
+    justify-items:right;
+  }
+

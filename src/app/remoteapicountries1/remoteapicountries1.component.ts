@@ -4,6 +4,7 @@ import { Restphpapi1Service } from '../restphpapi1.service';
 
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { MyAuthUserService } from '../my-auth-user.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class Remoteapicountries1Component implements OnInit {
 
   headers: any;
 
-  constructor(private myphpapi: Restphpapi1Service) { }
+  constructor(private authService: MyAuthUserService, private myphpapi: Restphpapi1Service) { }
 
   ngOnInit(): void {
   
@@ -84,5 +85,8 @@ export class Remoteapicountries1Component implements OnInit {
     this.emitLocalCountriess.emit(getlocal);
   }
 
+  userLogout(): void {
+    this.authService.logout();
+  }
 
 }

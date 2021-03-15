@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 import { Router } from '@angular/router';
+import { MyAuthUserService } from '../my-auth-user.service';
 //import { User } from '../dataclasses/user';
 
 @Component({
@@ -13,17 +14,15 @@ export class Login1Component implements OnInit {
   loginForm1!: FormGroup;
   isSubmitted: boolean  =  false;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private userService: MyAuthUserService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
     this.loginForm1  =  this.formBuilder.group({
       logEmail: ['', Validators.required],
       logPassword: ['', Validators.required]
-
   });
   }
-
 
   get formControls() { return this.loginForm1!.controls; }
 
@@ -36,7 +35,14 @@ export class Login1Component implements OnInit {
     if(this.loginForm1!.invalid){
       return;
     }
-    //this.authService.login(this.loginForm.value);
+
+    // if(this.loginForm1!.get("logPassword").value !== 'passw') { 
+    //   alert('Wrong credentials! You are not allowed to view this page!');
+    //   return;
+    // }
+
+    this.userService.setUser(this.loginForm1!.get("logEmail")!.value, this.loginForm1!.get("logPassword")!.value);
+
     this.router.navigateByUrl('/admin');
   }
 

@@ -1,21 +1,38 @@
 <!-- <p>remoteapicountries1 works!</p> -->
 
 <div class = "form-wrapper" >
-    <div class = "buttons-nav" >
 
-        <button  class="navitem"
-        (click)="getRemoteData()">
-        Fetch Remote Data
-        </button>
+    
 
-        <button  class="navitem"
-        (click)="getLocalData()">
-        Get Local Data
-        </button>
         
 
+        <div class = "buttons-nav" >
 
-    </div>
+            
+            <div id="part1">
+                <button  class="navitem"
+                (click)="getRemoteData()">
+                Fetch Remote Data
+                </button>
+
+                <button  class="navitem"
+                (click)="getLocalData()">
+                Get Local Data
+                </button>
+            </div>    
+            
+
+            <div id="part2">
+                <button  class="navitem"
+                (click)="userLogout()">
+                Log-Out
+                </button>
+            </div>
+            
+
+        </div>
+
+    
 
 </div>
 <hr>
